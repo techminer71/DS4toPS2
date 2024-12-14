@@ -1,5 +1,6 @@
 #include "pico/stdio.h"
 #include "pico/cyw43_arch.h"
+#include "hardware/clocks.h"
 
 #include "controller_simulator.h"
 
