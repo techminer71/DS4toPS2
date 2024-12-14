@@ -29,17 +29,28 @@ To get started with DS4toPS2, follow the steps below:
 
 2. Connect the Raspberry Pi Pico W to your computer using a USB cable.
 
-3. Build and flash the firmware onto the Raspberry Pi Pico W.
+3. Build the firmware with the following commands
 
-4. Connect the Raspberry Pi Pico W to the desired controller port on the PlayStation 2.
+   ```
+   cd DS4toPS2
+   git submodule update --init --recursive
+   mkdir build
+   cd build
+   cmake -DPICO_BOARD=pico_w -DPICO_SDK_PATH=/your/path/to/pico-sdk ../
+   make
+   ```
+  
+5. flash the firmware located in 'DS4toPS2/build' onto the Raspberry Pi Pico W by dragging the uf2 file onto the RPI-RP2.
 
-5. Power on the PlayStation 2 console.
+6. Connect the Raspberry Pi Pico W to the desired controller port on the PlayStation 2.
 
-6. Ensure that the PlayStation 4 controller is fully charged and turned off.
+7. Power on the PlayStation 2 console.
 
-7. If the Playstation 4 controller has not already been paired to the Raspberry Pi Pico W, press and hold the "PS" and "Share" buttons on the PlayStation 4 controller simultaneously until the LED on the controller starts double flashing. This initiates the pairing process with the Raspberry Pi Pico W.
+8. Ensure that the PlayStation 4 controller is fully charged and turned off.
 
-8. Once the pairing is successful, the Raspberry Pi Pico W will start emulating the PlayStation 2 controller input, allowing you to control the console using the PlayStation 4 controller.
+9. If the Playstation 4 controller has not already been paired to the Raspberry Pi Pico W, press and hold the "PS" and "Share" buttons on the PlayStation 4 controller simultaneously until the LED on the controller starts double flashing. This initiates the pairing process with the Raspberry Pi Pico W.
+
+10. Once the pairing is successful, the Raspberry Pi Pico W will start emulating the PlayStation 2 controller input, allowing you to control the console using the PlayStation 4 controller.
 
 ### Configuration
 
