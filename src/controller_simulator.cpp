@@ -361,7 +361,7 @@ void __time_critical_func(restart_pio_sm)() {
 
 void __time_critical_func(process()) {
 	check_gpio_param(PIN_SEL);
-    iobank0_hw->intr[PIN_SEL / 8] = GPIO_IRQ_EDGE_RISE << (4 * (PIN_SEL % 8));
+    io_bank0_hw->intr[PIN_SEL / 8] = GPIO_IRQ_EDGE_RISE << (4 * (PIN_SEL % 8));
 
 	restart_pio_sm();
 }
