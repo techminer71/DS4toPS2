@@ -40,9 +40,15 @@ To get started with DS4toPS2, follow the steps below:
    make
    ```
   
-5. flash the firmware located in 'DS4toPS2/build' onto the Raspberry Pi Pico W by dragging the uf2 file onto the RPI-RP2.
+4. flash the firmware located in 'DS4toPS2/build' onto the Raspberry Pi Pico W by dragging the uf2 file onto the RPI-RP2.
 
-6. Connect the Raspberry Pi Pico W to the desired controller port on the PlayStation 2.
+5. Connect the Raspberry Pi Pico W to the desired controller port on the PlayStation 2.
+   ####Pin Assignments
+   - GP5 > Data Pin(brown
+   - GP6 > Command Pin(Orange)
+   - GP7 > Select/Attention Pin(Yellow)
+   - GP8 > Clock Pin(Blue)
+   - GP9 > Acknowledge Pin(Green)
 
 7. Power on the PlayStation 2 console.
 
