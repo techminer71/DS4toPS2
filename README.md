@@ -19,6 +19,16 @@ To get started with DS4toPS2, follow the steps below:
 - PlayStation 4 controller
 - USB cable (to connect Raspberry Pi Pico W to PlayStation 2 console)
 
+### Configuration
+
+The DS4toPS2 project includes the following configuration files:
+
+- `controller_simulator.c`: This file contains the MAC address of the PlayStation 4 controller, which is hardcoded. Make sure to update this file with the correct MAC address of your controller before building and flashing the firmware.
+
+- `psxSPI.pio`: This file includes the GPIO pin assignments for the Raspberry Pi Pico. If you need to modify the pin assignments, make the necessary changes in this file before building and flashing the firmware.
+
+- `btstack/src/classic/hid_host.c`: This file in the BTStack library. You need to modify the hardcoded value of the define `MAX_ATTRIBUTE_VALUE_SIZE` to 512. Locate the line in the file and make the necessary change to ensure compatibility with the PlayStation 4 controller.
+
 ### Installation
 
 1. Clone this repository to your local machine:
@@ -59,16 +69,6 @@ To get started with DS4toPS2, follow the steps below:
 9. If the Playstation 4 controller has not already been paired to the Raspberry Pi Pico W, press and hold the "PS" and "Share" buttons on the PlayStation 4 controller simultaneously until the LED on the controller starts double flashing. This initiates the pairing process with the Raspberry Pi Pico W.
 
 10. Once the pairing is successful, the Raspberry Pi Pico W will start emulating the PlayStation 2 controller input, allowing you to control the console using the PlayStation 4 controller.
-
-### Configuration
-
-The DS4toPS2 project includes the following configuration files:
-
-- `controller_simulator.c`: This file contains the MAC address of the PlayStation 4 controller, which is hardcoded. Make sure to update this file with the correct MAC address of your controller before building and flashing the firmware.
-
-- `psxSPI.pio`: This file includes the GPIO pin assignments for the Raspberry Pi Pico. If you need to modify the pin assignments, make the necessary changes in this file before building and flashing the firmware.
-
-- `btstack/src/classic/hid_host.c`: This file in the BTStack library. You need to modify the hardcoded value of the define `MAX_ATTRIBUTE_VALUE_SIZE` to 512. Locate the line in the file and make the necessary change to ensure compatibility with the PlayStation 4 controller.
 
 ### Acknowledgments
 
